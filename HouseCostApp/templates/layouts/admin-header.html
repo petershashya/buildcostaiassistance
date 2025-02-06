@@ -1,0 +1,46 @@
+{% load static %}
+<header id="header" class="header">
+
+    <div class="nav-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="index-2.html"><img src="{% static 'assets/images/logo2.png' %}" alt=""></a>
+                    </div>
+                    <!-- Phone Menu button -->
+                    <button id="menu" class="menu hidden-md-up"></button>
+                </div>
+                <div class="col-md-9 nav-bg d-flex align-items-center">
+                    <nav class="navigation">
+                        <ul>
+                            {% if user.is_authenticated %}
+                                <li>
+                                    <a href="{% url 'logout' %}">Logout</a><i class="ion-ios-plus-empty hidden-md-up"></i>
+                                </li>
+                                
+                            {% else %}
+                                <li>
+                                    <a href="{% url 'index' %}">Home</a><i class="ion-ios-plus-empty hidden-md-up"></i>
+                                </li>
+                                <li>
+                                    <a href="#">About us</a><i class="ion-ios-plus-empty hidden-md-up"></i>
+                                </li>
+                                <li>
+                                    <a href="{% url 'login' %}">Login</a><i class="ion-ios-plus-empty hidden-md-up"></i>
+                                </li>
+                                <li>
+                                    <a href="{% url 'register' %}">Register</a><i class="ion-ios-plus-empty hidden-md-up"></i>
+                                </li>
+                                <li>
+                                    <a href="#">Contact Us</a><i class="ion-ios-plus-empty hidden-md-up"></i>
+                                </li>
+                            {% endif %}
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

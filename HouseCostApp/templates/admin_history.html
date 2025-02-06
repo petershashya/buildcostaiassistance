@@ -1,0 +1,120 @@
+{% extends 'layouts/admin-base.html' %}
+{% block content %}
+{% load static %}
+<style>
+	.card {
+		border: none;
+		border-radius: 10px;
+		padding: 20px;
+		margin: auto;
+	}
+	
+	.card-header {
+		border-radius: 10px 10px 0 0;
+		padding: 10px;
+		background-color: #6c757d;
+	}
+	
+	.card-header h2 {
+		margin: 0;
+		font-size: 24px;
+		color: #fff;
+	}
+	
+	 .card-body {
+		
+		border-radius: 0 0 10px 10px;
+		padding: 20px;
+	}
+	
+	.form-control {
+		border-radius: 5px;
+		margin-bottom: 15px;
+		background-color: #555;
+		color: #fff;
+		border: 1px solid #444;
+	}
+	
+	.form-control::placeholder {
+		color: #bbb;
+	}
+	
+	.form-control:focus {
+		background-color: #666;
+		color: #fff;
+		border-color: #007bff;
+	}
+	
+	.button {
+		background-color: #d18719;
+		border-color: #007bff;
+		padding: 10px 20px;
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 5px;
+		text-decoration: none;
+		display: inline-block;
+	}
+	
+	.btn-primary:hover {
+		background-color: #0056b3;
+		border-color: #0056b3;
+	}
+	label{
+		color: #fff;
+	}
+	th{
+		color:black;
+	}
+</style>
+
+
+<div class="pt-90 pt-xs-50">
+    <div class="card bg-dark text-black">
+        <div class="card-header bg-secondary text-center">
+            <h2>List Of Transactions</h2>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+    
+             <table class="table" id="userTable"  border="1">
+               <thead>
+                <tr>
+                <th style="color:black;">S/N</th>
+				<th style="color:black;">Name</th>
+                <th style="color:black;">Quality of Construction</th>
+                <th style="color:black;">Number Of Floor</th>
+                <th style="color:black;">Type of Structure</th>
+                <th style="color:black;">Construction Material</th>
+                <th style="color:black;">Location</th>
+                <th style="color:black;">Location Nature</th>
+                <th style="color:black;">Construction Period</th>
+                <th style="color:black;">Price Predicted</th>
+               </tr>
+              </thead>
+               <tbody>
+              {% for house in houses %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+					<td>{{ house.user.name }}</td>
+                    <td>{{ house.quality_of_construction }}</td>
+                    <td>{{ house.numberfloor}}</td>
+                    <td>{{ house.type_of_structure }}</td>
+                    <td>{{ house.construction_material }}</td>
+                    <td>{{ house.location_of_house }}</td>
+                    <td>{{ house.location_nature }}</td>
+                    <td>{{ house.construction_period }}</td>
+                    <td>{{ house.predicted_price }}</td>
+                </tr>
+               {% endfor %}
+              </tbody>
+          </table>
+        </div>
+      
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+        .message-section {
+                background-color: #d4edda; /* Red color for error messages */
+                color: #721c24; /* Dark color for error messages */
+                padding: 10px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            
+            .message-section.success {
+                background-color: #d4edda; /* Green color for success messages */
+                color: #155724; /* Dark color for success messages */
+            }
+            
+            .message {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .error {
+                font-weight: bold;
+            }
+            
+</style>
+{% include './heads.html' %}
+<body>
+{% include './loader.html' %}
+{% include './admin-header.html' %}
+<!-- star-banner -->
+		<!--  Main Banner Start Here-->
+		<div class="main-banner">
+  {% block content %}{% endblock %}
+{% include './footer.html' %}
+{% include './scripts.html' %}
+
+        </div>
+</body>
