@@ -27,4 +27,4 @@ RUN pip install -r requirements.txt --no-cache-dir -v
 
 COPY . /app
 
-ENTRYPOINT ["gunicorn", "core.wsgi"]
+ENTRYPOINT ["gunicorn", "housecost2.wsgi"]
