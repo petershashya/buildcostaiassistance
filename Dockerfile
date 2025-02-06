@@ -1,25 +1,30 @@
-# Use an appropriate base image
-FROM python:3.12
-
-# Set environment variables
-ENV PYTHONUNBUFFERED=1
+FROM python:3.12.2-slim-bullseye
 
 # Set the working directory
 WORKDIR /app
 
-# Install system dependencies for ZBar and other required libraries
+# Environment variables to optimize Python
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
-    zbar \
-    libgl1-mesa-glx \
-    libglib2.0-0 \
+    libpq-dev libjpeg-dev zlib1g-dev libmysqlclient-dev build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install Python dependencies
-COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r requirements.txt
+# Upgrade pip and install dependencies
+RUN pip install --upgrade pip setuptools wheel
 
-# Copy the application code
-COPY . /app/
+# Copy and install dependencies inside a virtual environment
+COPY ./requirements.txt /app/
+RUN python3 -m venv /app/venv
+ENV PATH="/app/venv/bin:$PATH"
 
-# Run the Django application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "housecost2.wsgi"]
+RUN pip install -r requirements.txt --no-cache-dir -v
+
+# Copy the entire application code
+COPY . /app
+
+# Run Gunicorn with correct configurations
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "housecost2.wsgi:application"]
+
