@@ -321,7 +321,7 @@ website:   	http://www.themepunch.com
 {
 	-moz-border-radius:0;
 	-webkit-border-radius:0;
-	background-color:#67ae73;
+	background-color:#00ff0d;
 	border-radius:0;
 	color:#fff;
 	font-family:"Open Sans";
@@ -374,7 +374,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_thin_grey,.medium_thin_grey
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#666;
@@ -391,7 +391,7 @@ website:   	http://www.themepunch.com
 .tp-caption.small_thin_grey,.small_thin_grey
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#757575;
@@ -421,7 +421,7 @@ website:   	http://www.themepunch.com
 .tp-caption.large_bold_darkblue,.large_bold_darkblue
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#34495e;
@@ -435,7 +435,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_bg_darkblue,.medium_bg_darkblue
 {
 	background-color:#34495e;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -450,7 +450,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_bold_red,.medium_bold_red
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#e33a0c;
@@ -465,7 +465,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_light_red,.medium_light_red
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#e33a0c;
@@ -495,10 +495,10 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_bold_orange,.medium_bold_orange
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
-	color:#f39c12;
+	color:#00ff0d;
 	font-family:"Open Sans";
 	font-size:24px;
 	font-weight:800;
@@ -508,8 +508,8 @@ website:   	http://www.themepunch.com
 
 .tp-caption.medium_bg_orange,.medium_bg_orange
 {
-	background-color:#f39c12;
-	border-color:#ffd658;
+	background-color:#00ff0d;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -535,7 +535,7 @@ website:   	http://www.themepunch.com
 .tp-caption.large_bold_white,.large_bold_white
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -549,7 +549,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_light_white,.medium_light_white
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -564,7 +564,7 @@ website:   	http://www.themepunch.com
 .tp-caption.mediumlarge_light_white,.mediumlarge_light_white
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -579,7 +579,7 @@ website:   	http://www.themepunch.com
 .tp-caption.mediumlarge_light_white_center,.mediumlarge_light_white_center
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -595,7 +595,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_bg_asbestos,.medium_bg_asbestos
 {
 	background-color:#7f8c8d;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -610,7 +610,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_light_black,.medium_light_black
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#000;
@@ -625,7 +625,7 @@ website:   	http://www.themepunch.com
 .tp-caption.large_bold_black,.large_bold_black
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#000;
@@ -639,7 +639,7 @@ website:   	http://www.themepunch.com
 .tp-caption.mediumlarge_light_darkblue,.mediumlarge_light_darkblue
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#34495e;
@@ -654,7 +654,7 @@ website:   	http://www.themepunch.com
 .tp-caption.small_light_white,.small_light_white
 {
 	background-color:transparent;
-	border-color:#ffd658;
+	border-color:#00ff0d;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -676,7 +676,7 @@ website:   	http://www.themepunch.com
 .tp-caption.large_bg_black,.large_bg_black
 {
 	background-color:#000;
-	border-color:#ffd658;
+	border-color:#00ffbf;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -3683,7 +3683,7 @@ website:   	http://www.themepunch.com
         font-family: Roboto;
         padding: 12px 75px 12px 50px;
         text-decoration: none;
-        background-color: rgba(254, 207, 114, 1.00);
+        background-color: #00ff0d;
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
@@ -3695,7 +3695,7 @@ website:   	http://www.themepunch.com
     .Woo-ProductInfo:hover {
         color: rgba(0, 0, 0, 1.00);
         text-decoration: none;
-        background-color: rgba(243, 168, 71, 1.00);
+        background-color: #00ff0d;
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
@@ -3723,7 +3723,7 @@ website:   	http://www.themepunch.com
     .Woo-AddToCart:hover {
         color: rgba(0, 0, 0, 1.00);
         text-decoration: none;
-        background-color: rgba(243, 168, 71, 1.00);
+        background-color: #00ffbf;
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;

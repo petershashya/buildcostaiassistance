@@ -78,3 +78,40 @@ class House(models.Model):
     numberfloor=models.IntegerField(default=0)
     def __str__(self):
         return f'{self.type_of_structure} in {self.location_of_house}'
+    
+
+class HouseMap(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    map_image = models.ImageField(upload_to='house_maps/')
+    result = models.TextField(blank=True, null=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Map {self.id}"
+    
+
+class HouseCost(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    # one latest housemap only
+    house_map = models.OneToOneField(
+        HouseMap,
+        on_delete=models.CASCADE,
+        related_name='house_cost',
+        null=True,
+        blank=True
+    )
+    quality_of_construction = models.CharField(max_length=50)
+    type_of_structure = models.CharField(max_length=50)
+    door_material = models.CharField(max_length=50)
+    window_material = models.CharField(max_length=50)
+    construction_material = models.CharField(max_length=50)
+    location_of_house = models.CharField(max_length=50)
+    location_nature = models.CharField(max_length=50)
+    construction_period = models.IntegerField()
+    predicted_price = models.FloatField(default=0.0)
+    numberfloor = models.IntegerField(default=1)
+    ai_result = models.TextField(blank=True, null=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.type_of_structure} in {self.location_of_house}'

@@ -1,0 +1,393 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+	.card {
+		border: none;
+		border-radius: 10px;
+		padding: 20px;
+		margin: auto;
+	}
+	
+	.card-header {
+		border-radius: 10px 10px 0 0;
+		padding: 10px;
+		background-color: #6c757d;
+	}
+	
+	.card-header h2 {
+		margin: 0;
+		font-size: 24px;
+		color: #fff;
+	}
+	
+	.card-body {
+		background-color: #343a40;
+		border-radius: 0 0 10px 10px;
+		padding: 20px;
+	}
+	
+	.form-control {
+		border-radius: 5px;
+		margin-bottom: 15px;
+		background-color: #555;
+		color: #fff;
+		border: 1px solid #444;
+	}
+	
+	.form-control::placeholder {
+		color: #bbb;
+	}
+	
+	.form-control:focus {
+		background-color: #666;
+		color: #fff;
+		border-color: #007bff;
+	}
+
+    .hidden {
+            display: none;
+        }
+    
+	.button {
+		background-color: #d18719;
+		border-color: #007bff;
+		padding: 10px 20px;
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 5px;
+		text-decoration: none;
+		display: inline-block;
+	}
+	
+	.btn-primary:hover {
+		background-color: #0056b3;
+		border-color: #0056b3;
+	}
+	label{
+		color: #fff;
+	}
+	
+</style>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<!-- Intro Section -->
+ <section class="inner-intro bg-img light-color overlay-before parallax-background">
+    <div class="container">
+      <div class="row title">
+		<div class="title_row">
+			<h1 data-title="About">
+				<span>
+					Welcome 
+					
+				</span>
+			</h1>
+			<div class="page-breadcrumb"  style="font-size:25px;">
+				<span>{% if user.is_authenticated %}
+					{{ user.name }}
+				{% else %}
+					Guest
+				{% endif %}</span>
+			</div>
+		</div>
+    </div>
+  </section>
+ <!-- Intro Section End-->
+			
+			
+			<!-- CONTENT -->
+
+			<section class="padding ptb-xs-40">
+				<div class="container">
+
+					<div class="row">
+						<div class="col-md-3 col-lg-3 mt-xs-40 pb-xs-40">
+							<div class="tab-title">
+								<ul class="clearfix">
+									<li>
+										<a href="{% url 'scan_house_map' %}" class="active"><i class="fas fa-building"></i> Home</a>
+									</li>
+									<li>
+										<a href="{% url 'history' %}"><i class="fas fa-history"></i> History</a>
+									</li>
+									<li>
+										<a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+									</li>
+								</ul>
+							</div>
+							<div class="company-brochure mt-30">
+								<h4>Downlaod Brochure</h4>
+								<a href="#"><img src="{% static 'assets/images/flyer.jpg' %}" alt=""></a>
+							</div>
+						</div>
+
+						<div class="col-md-9 col-lg-9">
+							<div class="tab-content">
+
+								<div class="row tab-block">
+									<div class="row-table abt-block__bg">
+										<div class="col-md-6 col-lg-6 no-padding t_cell abt-block__img1 hidden-sm-down"></div>
+										<div class="col-md-6 col-lg-6 no-padding t_cell">
+											<div class="abt-box__content">
+												<h2>House Cost Prediction</h2>
+												<p>
+													By Uploading the Floor Plan of your house Below and Filling some additional informations Our system will automatically display the cost of Building your House
+												</p>
+												<a href="#" class="abt-box__content-link"> Read More <i class="fa fa-chevron-circle-right abt-box__content-link-arrow" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+									
+
+							<!-- About Section -->
+							<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+							<div class="pt-90 pt-xs-40">
+								<div class="message-section {% if messages %}{% if messages.tags == 'success' %}success{% endif %}{% endif %}" style="{% if messages %}display: block;{% else %}display: none;{% endif %}">
+									{% if messages %}
+										<ul class="messages">
+											{% for message in messages %}
+												<li class="message {% if message.tags %} {{ message.tags }} {% endif %}">{{ message }}</li>
+											{% endfor %}
+										</ul>
+									{% endif %}
+								</div>
+
+								<div id="preloader-container" style="display: none;"></div>
+
+
+                                    <!-- HOUSEMAP DETECTION SUMMARY TABLE -->
+								{% if result %}
+							<div class="card bg-dark text-white mt-2">
+									<!-- THE RETURNED HOUSEMAP RESPONCE -->
+                                            {% if image_url %}
+                                                {% comment %} <img src="{{ image_url }}"> {% endcomment %}
+												<div class="row mx-2 mb-2">
+												<a class="col-sm- btn btn-lg bg-info px-3 py-2 rounded view-house" data-id="{{ image_id }}" data-type="image"  >View Uploaded House Map
+												</a>
+												</div>
+                                            {% endif %}
+
+								{% comment %} <div class="card-header bg-secondary text-center">
+										<h4> HouseMap Details</h4>
+									</div>
+									<div class="card-body p-2">
+											<div style="max-height:450px; overflow-y:auto;">
+                                                <table width="100%">
+                                                    <tr>
+                                                        <td style="padding:20px; white-space:pre-wrap;" class="text-white">
+                                                            {{ result }}
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+									</div> {% endcomment %}
+
+
+									 <div class="card-header bg-secondary text-center">
+										<h4> HouseMap Details</h4>
+									</div>
+										<div class="table-responsive">
+    									<table class="table table-bordered table-hover table-striped table-secondary table-sm text-center align-middle">
+										<thead class="text-dark">
+											<tr>
+												<th class="text-center align-middle">Rooms</th>
+												<th class="text-center">Bedrooms</th>
+												<th class="text-center">Bathrooms</th>
+												<th class="text-center">Kitchens</th>
+												<th class="text-center">Corridors</th>
+												<th class="text-center">Doors</th>
+												<th class="text-center">Windows</th>
+												<th class="text-center">Floors</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="text-center align-middle">
+													{{ result.total_rooms }}
+												</td>
+												<td class="text-center align-middle">
+													{{ result.total_bedrooms }}
+												</td>
+												<td class="text-center align-middle">
+													{{ result.total_bathrooms }}
+												</td>
+												<td class="text-center align-middle">
+													{{ result.total_kitchens }}
+												</td>
+												<td class="text-center align-middle">
+													{{ result.total_corridors }}
+												</td>
+												<td class="text-center align-middle">
+													{{ result.total_doors }}
+												</td>
+												<td class="text-center align-middle">
+													{{ result.total_windows }}
+												</td>
+												<td class="text-center align-middle">
+													{{ result.total_floors }}
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+					
+									<br>
+									<div class="card-header bg-secondary text-center">
+										<h4>Detected Areas</h4>
+									</div>
+										<div class="table-responsive-sm">
+										<table class="table table-bordered table-hover table-striped table-secondary table-sm">
+											<tr>
+												<th>Roof Structure</th>
+												<th>Garage Detection</th>
+												<th>Stair Detection</th>
+												<th>Balcony Detection</th>
+											</tr>
+											<tr>
+												<td class="text-center">{{ result.roof_structure_visible }}</td>
+												<td class="text-center">{{ result.garage_detection }}</td>
+												<td class="text-center">{{ result.stair_detection }}</td>
+												<td class="text-center">{{ result.balcony_detection }}</td>
+											</tr>
+										</table>
+									</div>
+
+										<br>
+										<!-- ROOM DETAILS -->
+										<div class="card-header bg-secondary text-center">
+											<h4>Detected Rooms</h4>
+										</div>
+										<div class="table-responsive-sm">
+										<table class="table table-bordered table-hover table-striped table-secondary table-sm">
+												<tr>
+													<th>Room Name</th>
+													<th>Width(ft)</th>
+													<th>Length(ft)</th>
+													<th>Area(sq_ft)</th>
+													<th>Area(m²)</th>
+													<th>Volume(m³)</th>
+												</tr>
+												{% for room in result.rooms_details %}
+												<tr>
+													<td class="text-center">{{ room.room_name }}</td>
+													<td class="text-center">{{ room.estimated_width_ft }}</td>
+													<td class="text-center">{{ room.estimated_length_ft }}</td>
+													<td class="text-center">{{ room.area_sq_ft }}</td>
+													<td class="text-center">{{ room.area_sq_meters }}</td>
+													<td class="text-center">{{ room.estimated_volume_m3 }}</td>
+												</tr>
+												{% endfor %}
+										</table>
+									</div>
+										<br>
+
+										<!-- TOTAL TABLE -->
+										<div class="table-responsive-sm mb-2">
+										<table class="table table-bordered table-hover table-striped table-secondary table-sm ">
+											<tr>
+												<th>Total House Area (m²)</th>
+												<th>Total House Volume (m³)</th>
+											</tr>
+
+											<tr>
+												<td class="text-center">{{ result.total_house_square_meters }}</td>
+												<td class="text-center">{{ result.total_house_volume_m3 }}</td>
+											</tr>
+										</table>
+									</div> 
+								</div> 
+
+								<!-- direct link for filling house preferences -->
+								<div class="row mx-2 mt-2">
+									<a href="{% url 'predict_house_cost' %}" class="col-sm- btn btn-lg bg-warning px-3 py-2 rounded">Predict Construction Cost</a>
+								</div>
+							</div> 
+
+
+
+							{% else %}
+							<div class="card bg-dark text-white">
+									<div class="card-header bg-secondary text-center">
+										<h4>Upload House Map For Scanning </h4>
+									</div>
+									<div class="card-body">
+											<!-- <form method="post" enctype="multipart/form-data"  id="predictForm">
+											{% csrf_token %}
+										 		<div class="row" >
+												<div class="form-group col-md-4">
+													<label for="inputFile">Floor plan</label>
+													<div class="input-group">
+														<input type="file" class="form-control rounded" id="inputFile" name="map_image" accept=".png" required>
+														<span class="input-group-addon">
+															<i class="fas fa-file"></i>
+														</span>
+													</div>
+												</div> -->
+												<div class="border-2 border-danger border-start bg-light text-danger p-2 mb-2 text-center">
+													!!! Make Sure you upload a housemap of this type ( Floor Plan, Blueprint or Building Layout )
+												</div>
+                                            <form method="POST" enctype="multipart/form-data" id="predictForm">
+                                                {% csrf_token %}
+                                                <div class="mx-3">{{ form.as_p }} </div>
+												<div class="row mx-2">
+                                                	<button type="submit" class="col-sm- btn btn-sm px-3 py-2 bg-warning">Submit</button>
+												</div>
+                                            </form>
+											</div>
+										</div>
+
+
+							<div class="card bg-dark text-white mt-2">
+								<div class="card-body px-2 py-3 d-flex justify-content-center align-items-center rounded">
+									<span class="spinner-grow text-light mx-1" style="font-size:5px;"></span>
+								Waiting for HouseMap analysis ...
+								</div>
+							</div>
+                   	{% endif %}
+										
+					
+
+							<!-- About Section End-->
+						<!-- Our mission -->
+					<!-- Our mission -->
+						</div>
+					</div>
+				</div>
+			</section>
+										{% comment %} </form> {% endcomment %}
+									<script>
+											document.getElementById('typeOfStructure').addEventListener('change', function() {
+												console.log("nafika hapa");
+												var numberOfFloorDiv = document.getElementById('numberOfFloorDiv');
+												if (this.value === 'Apartment Building') {
+													numberOfFloorDiv.classList.remove('hidden');
+												} else {
+													numberOfFloorDiv.classList.add('hidden');
+												}
+											});
+
+											document.getElementById('predictForm').addEventListener('submit', function(event) {
+												event.preventDefault(); // Prevent the default form submission
+											
+												// Fetch the loader file content
+												fetch({% url 'loader' %})
+													.then(response => response.text())
+													.then(data => {
+														// Insert the loader content into the preloader container
+														document.getElementById('preloader-container').innerHTML = data;
+														// Show the preloader container
+														document.getElementById('preloader-container').style.display = 'block';
+											
+														// Simulate form submission delay for demonstration purposes
+														setTimeout(function() {
+															document.getElementById('predictForm').submit(); // Continue with the form submission
+														}, 2000); // Adjust the delay as needed
+													})
+													.catch(error => console.error('Error loading preloader:', error));
+											});
+										</script>					
+
+			{% endblock %}

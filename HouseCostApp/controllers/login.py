@@ -14,7 +14,7 @@ def login_view(request):
             login(request, user)
             if user.is_superuser:
                 return redirect('admin-page')  # Redirect to admin page if superuser
-            return redirect('predict')  # Assuming you have a named URL for the home page
+            return redirect('scan_house_map')  # Assuming you have a named URL for the home page
         else:
             # Authentication failed, display error message
             messages.error(request, 'Invalid email or password')

@@ -2,10 +2,10 @@ from django.contrib import admin
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
-from HouseCostApp.models import CustomUser,House
+from HouseCostApp.models import CustomUser,House,HouseCost
 def admin_page(request):
     user_count = CustomUser.objects.count() 
-    transactions=House.objects.count()
+    transactions=HouseCost.objects.count()
     # Get the count of all users
     context = {
         'user_count': user_count,

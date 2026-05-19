@@ -6,7 +6,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         email = "admin@example.com"
-        password = "Admin123"
+        password = "12345"
         user_type = 'admin'
         name='Sample Admin'
 

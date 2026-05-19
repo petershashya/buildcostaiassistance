@@ -1,32 +1,54 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from HouseCostApp.models import House
+from HouseCostApp.models import House,HouseCost
 from .priceModel import check_image,model_calculations
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import tempfile
 from django.core.files.storage import FileSystemStorage
-def history_view(request):
-    house_list = House.objects.filter(user=request.user)
-    paginator = Paginator(house_list,10)  # Show 10 houses per page
 
+# def history_view(request):
+#     house_list = HouseCost.objects.filter(user=request.user)
+#     paginator = Paginator(house_list,10)  # Show 10 houses per page
+
+#     page = request.GET.get('page')
+#     try:
+#         houses = paginator.page(page)
+#     except PageNotAnInteger:
+#         # If page is not an integer, deliver first page.
+#         houses = paginator.page(1)
+#     except EmptyPage:
+#         # If page is out of range (e.g. 9999), deliver last page of results.
+#         houses = paginator.page(paginator.num_pages)
+        
+#     if request.user.is_authenticated:
+#         houses = HouseCost.objects.filter(user=request.user)
+# 
+    # return render(request, 'history.html', {'houses': houses})
+        
+        
+def history_view(request):
+    house_list = HouseCost.objects.filter(
+        user=request.user
+    ).select_related('house_map').order_by('-date_created')
+    paginator = Paginator(house_list, 10)
     page = request.GET.get('page')
+
     try:
         houses = paginator.page(page)
+
     except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
         houses = paginator.page(1)
+
     except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
         houses = paginator.page(paginator.num_pages)
-        
-    if request.user.is_authenticated:
-        houses = House.objects.filter(user=request.user)
+
+    return render(request, "history.html", {
+        "houses": houses
+    })
     
 
-    return render(request, 'history.html', {'houses': houses})
-
 def historyview(request):
-    houses = House.objects.all()
+    houses = HouseCost.objects.all()
     return render(request, 'admin_history.html', {'houses': houses})
 
 def predict(request):
@@ -42,9 +64,9 @@ def predict(request):
                 # Check the uploaded image
                 error_message, length_of_words = check_image(file_path)
                 # If there's an error message, display it and return
-                if error_message:
-                    messages.error(request, error_message)
-                    return render(request, 'predict.html')
+                # if error_message:
+                #     messages.error(request, error_message)
+                #     return render(request, 'predict.html')
 
                 # If the image passes the check, proceed with calculating the total points
                 quality_of_construction = request.POST['qualityOfConstruction']
