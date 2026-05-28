@@ -14,7 +14,10 @@ from django.contrib.auth import get_user_model
 #for new housemodal links
 import os
 from PIL import Image
+
 import google.generativeai as genai
+# import google as genai
+
 from .forms import HouseMapForm
 from .models import HouseMap
 import json
