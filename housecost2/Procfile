@@ -1,0 +1,1 @@
+web: gunicorn housecost2.wsgi

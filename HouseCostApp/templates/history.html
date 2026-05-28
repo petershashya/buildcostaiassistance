@@ -267,4 +267,48 @@
 				</div>
 			</section>
 
+
+
+			<!-- scripts codes -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).on("click", ".view-house", function () {
+
+    let houseId = $(this).data("id");
+    let type = $(this).data("type");
+
+    $.ajax({
+        url: "/get-house-data/",
+        type: "GET",
+        data: {
+            id: houseId,
+            type: type
+        },
+
+        success: function (response) {
+
+            // IF AI RESULT
+            if (type === "ai") {
+
+                $("#aiResultText").text(response.ai_result);
+                $("#aiModal").modal("show");
+            }
+
+            // IF IMAGE
+            if (type === "image") {
+
+                $("#houseImage").attr("src", response.image_url);
+                $("#imageModal").modal("show");
+            }
+        },
+
+        error: function () {
+            alert("Failed to load data");
+        }
+
+    });
+
+});
+</script>
+
 			{% endblock %}

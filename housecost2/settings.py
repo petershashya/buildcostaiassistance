@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
+#for hosting
+import dj_database_url
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MEDIA_URL = '/media/'
@@ -32,7 +35,7 @@ SECRET_KEY = 'django-insecure-c&)n*e4fbl7uxpcfp1(15nra3-n1fyx^^o^fwj3r+xj=r8p)0=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','buildcostaiassistance.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1','buildcostaiassistance.onrender.com','buildcostaiassistance.up.railway.app']
 
 
 # Application definition
@@ -83,11 +86,19 @@ WSGI_APPLICATION = 'housecost2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+#for hosting database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3',
+        conn_max_age=600
+    )
 }
 
 
@@ -139,6 +150,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+#for hosting static
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 #for using whitenoise 
