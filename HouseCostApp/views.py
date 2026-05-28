@@ -59,7 +59,7 @@ def delete_user(request, user_id):
 
 
 # Gemini API KEY
-API_KEY = "AIzaSyCBzdpuqaz4JM2lJl9uS6XVOwoVeoiMnF0"
+API_KEY = "AIzaSyB-TW9G7FfZf8kWMjUDDUFu8wQMSGEMlKg"
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-3-flash-preview')
 #model = genai.GenerativeModel('gemini-2.0-flash')
