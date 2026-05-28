@@ -1,1 +1,1 @@
-web: gunicorn housecost2.wsgi:application --bind 0.0.0.0:$PORT
+web: gunicorn housecost2.wsgi
