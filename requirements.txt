@@ -12,9 +12,11 @@ distlib==0.4.0
 dj-database-url==3.0.1
 Django==5.2.7
 django-crispy-forms==2.4
+dotenv==0.9.9
 easyocr==1.7.2
 filelock==3.20.0
 fsspec==2026.4.0
+git-filter-repo==2.47.0
 google-ai-generativelanguage==0.6.15
 google-api-core==2.25.2
 google-api-python-client==2.196.0
@@ -55,6 +57,7 @@ pyparsing==3.3.2
 pytesseract==0.3.13
 python-bidi==0.6.10
 python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
 pytz==2025.2
 PyYAML==6.0.3
 regex==2026.5.9
@@ -77,5 +80,6 @@ tzdata==2025.2
 uritemplate==4.2.0
 urllib3==2.7.0
 virtualenv==20.35.3
+wheel==0.47.0
 whitenoise==6.9.0
 xlsxwriter==3.2.9
