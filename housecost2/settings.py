@@ -35,10 +35,10 @@ SECRET_KEY = 'django-insecure-c&)n*e4fbl7uxpcfp1(15nra3-n1fyx^^o^fwj3r+xj=r8p)0=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','buildcostaiassistance-production.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1','buildcostaiassistance.up.railway.app']
 
 #for hosting
-CSRF_TRUSTED_ORIGINS = ['https://buildcostaiassistance-production.up.railway.app',]
+CSRF_TRUSTED_ORIGINS = ['https://buildcostaiassistance.up.railway.app',]
 
 # Application definition
 
@@ -117,6 +117,19 @@ DATABASES = {
 # }
 
 
+#for hosting database option2
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'buildaiassistance_db',
+#         'USER': 'buildaiassistanceuser',
+#         'PASSWORD': 'buildaiassistance2026',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+# DATABASES["default"] = dj_database_url.parse("postgresql://rosenutritionlife_db_user:uj2U3w8PPZvIUxZeeYb07TbIpw22E7cL@dpg-d384ifhr0fns73fei8kg-a.oregon-postgres.render.com/rosenutritionlife_db")
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -154,7 +167,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 #for hosting static
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 #for using whitenoise 
