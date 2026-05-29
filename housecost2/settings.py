@@ -15,6 +15,8 @@ import os
 
 #for hosting
 import dj_database_url
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -33,7 +35,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c&)n*e4fbl7uxpcfp1(15nra3-n1fyx^^o^fwj3r+xj=r8p)0='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','buildcostaiassistance.up.railway.app']
 

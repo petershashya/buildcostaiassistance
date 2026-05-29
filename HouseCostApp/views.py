@@ -61,11 +61,17 @@ def delete_user(request, user_id):
 
 
 
-# Gemini API KEY
-API_KEY = "AIzaSyB-TW9G7FfZf8kWMjUDDUFu8wQMSGEMlKg"
-genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel('gemini-3-flash-preview')
-#model = genai.GenerativeModel('gemini-2.0-flash')
+# Old Gemini API KEY attach method
+# API_KEY = "AIzaSyB-TW9G7FfZf8kWMjUDDUFu8wQMSGEMlKg"
+# genai.configure(api_key=API_KEY)
+# model = genai.GenerativeModel('gemini-3-flash-preview')
+
+# New Gemini API KEY attach method
+client = genai.Client(
+    api_key=os.getenv("GEMINI_API_KEY")
+)
+model = client.models
+
 
 @login_required
 def scan_house_map(request):
@@ -145,7 +151,7 @@ def scan_house_map(request):
             """
 
             # Send image + prompt to Gemini
-            response = model.generate_content([prompt, img])
+            response = model.generate_content(model = "gemini-3-flash-preview", contents= [prompt, img])
 
             raw_result = response.text
 
