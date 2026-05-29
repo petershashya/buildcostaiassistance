@@ -1,31 +1,34 @@
 FROM python:3.12.2-slim-bullseye
+
 WORKDIR /app
 
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
 
-# install system depedencies
+# Install system dependencies
 RUN apt-get update
 
-
-# #upgrade others dependencies
-# RUN apt-get update && apt-get install -y \
-#     libpq-dev libjpeg-dev zlib1g-dev libmysqlclient-dev build-essential
-# RUN pip install --upgrade pip setuptools wheel
-
-# install dependencies
+# Upgrade pip
 RUN pip install --upgrade pip
-COPY ./requirements.txt /app/
 
+# Copy requirements first
+COPY requirements.txt /app/
 
-# added items
+# Create virtual environment
 RUN python3 -m venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
 
-#RUN pip install -r requirements.txt
-RUN pip install -r requirements.txt --no-cache-dir -v
-#RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies
+RUN pip install -r requirements.txt --no-cache-dir
 
+# Copy project
 COPY . /app
 
-ENTRYPOINT ["gunicorn", "housecost2.wsgi"]
+# Collect static files
+RUN python manage.py collectstatic --noinput
+
+# Expose Railway port
+EXPOSE 8080
+
+# Start Django with migrations
+CMD python manage.py migrate && gunicorn housecost2.wsgi:application --bind 0.0.0.0:$PORT
