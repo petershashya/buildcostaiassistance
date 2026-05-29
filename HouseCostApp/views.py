@@ -67,6 +67,7 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-3-flash-preview')
 
+
 # New Gemini API KEY attach method
 # client = genai.Client(
 #     api_key=os.getenv("GEMINI_API_KEY")
