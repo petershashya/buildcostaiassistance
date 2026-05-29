@@ -199,7 +199,7 @@
 .icon-social-vkontakte,
 .icon-social-steam {
   font-family: 'simple-line-icons';
-  speak: none;
+  /* speak: none; */
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

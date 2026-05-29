@@ -2075,8 +2075,8 @@ website:   	http://www.themepunch.com
 .tp-caption.Gym-Button-Light:hover,.Gym-Button-Light:hover
 {
 	background-color:rgba(114,168,0,0);
-	border-color:rgb(96, 139, 14)
-	border-radius:30px 30px 30px 30px;
+	border-color:rgb(96, 139, 14);
+	border-radius: 30px 30px 30px 30px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -3433,7 +3433,7 @@ website:   	http://www.themepunch.com
         line-height: px;
         font-weight: 400;
         font-style: normal;
-        font-family: ;
+        /* font-family: ; */
         padding: 0px 0px 0px 0px;
         text-decoration: none;
         text-align: left;
@@ -3505,7 +3505,7 @@ website:   	http://www.themepunch.com
         border-width: 0px;
         border-radius: 0 0 0 0px;
         text-align: center;
-        type: text
+        /* type: text */
     }
     .tp-caption.Woo-Rating,
     .Woo-Rating {
@@ -3523,7 +3523,7 @@ website:   	http://www.themepunch.com
         border-width: 0px;
         border-radius: 0 0 0 0px;
         text-align: left;
-        type: text
+        /* type: text */
     }
     .tp-caption.Woo-SubTitle,
     .Woo-SubTitle {
@@ -3542,7 +3542,7 @@ website:   	http://www.themepunch.com
         border-radius: 0 0 0 0px;
         text-align: center;
         letter-spacing: 2px;
-        type: text
+        /* type: text */
     }
     .tp-caption.Woo-PriceLarge,
     .Woo-PriceLarge {
@@ -3560,7 +3560,7 @@ website:   	http://www.themepunch.com
         border-width: 0px;
         border-radius: 0 0 0 0px;
         text-align: center;
-        type: text
+        /* type: text */
     }
     .tp-caption.Woo-ProductInfo,
     .Woo-ProductInfo {
@@ -3578,7 +3578,7 @@ website:   	http://www.themepunch.com
         border-width: 1px;
         border-radius: 4px 4px 4px 4px;
         text-align: left;
-        type: button
+        /* type: button */
     }
     .tp-caption.Woo-ProductInfo:hover,
     .Woo-ProductInfo:hover {
@@ -3606,7 +3606,7 @@ website:   	http://www.themepunch.com
         border-width: 1px;
         border-radius: 4px 4px 4px 4px;
         text-align: left;
-        type: button
+        /* type: button */
     }
     .tp-caption.Woo-AddToCart:hover,
     .Woo-AddToCart:hover {
@@ -3634,7 +3634,7 @@ website:   	http://www.themepunch.com
         border-width: 0px;
         border-radius: 0 0 0 0px;
         text-align: center;
-        type: text
+        /* type: text */
     }
     .tp-caption.Woo-SubTitle,
     .Woo-SubTitle {
@@ -3653,7 +3653,7 @@ website:   	http://www.themepunch.com
         border-radius: 0 0 0 0px;
         text-align: center;
         letter-spacing: 2px;
-        type: text
+        /* type: text */
     }
     .tp-caption.Woo-PriceLarge,
     .Woo-PriceLarge {
@@ -3671,7 +3671,7 @@ website:   	http://www.themepunch.com
         border-width: 0px;
         border-radius: 0 0 0 0px;
         text-align: center;
-        type: text
+        /* type: text */
     }
     .tp-caption.Woo-ProductInfo,
     .Woo-ProductInfo {
@@ -3689,7 +3689,7 @@ website:   	http://www.themepunch.com
         border-width: 1px;
         border-radius: 4px 4px 4px 4px;
         text-align: left;
-        type: button
+        /* type: button */
     }
     .tp-caption.Woo-ProductInfo:hover,
     .Woo-ProductInfo:hover {
@@ -3717,7 +3717,6 @@ website:   	http://www.themepunch.com
         border-width: 1px;
         border-radius: 4px 4px 4px 4px;
         text-align: left;
-        type: button
     }
     .tp-caption.Woo-AddToCart:hover,
     .Woo-AddToCart:hover {

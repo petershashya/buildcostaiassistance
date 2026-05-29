@@ -114,7 +114,7 @@ a:hover, a:focus {
 	outline: none;
 }
 a:focus, a:hover {
-	color: #00ff0d;
+	color: #e7880c;
 }
 a {
 	color: #222;
@@ -753,7 +753,7 @@ a, .btn, img {
 	display: inline-block;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	background: #00ff0d;
+	background: #e7880c;
 	height: 50px;
 	text-align: center;
 	-webkit-transition: all 0.2s linear 0s;
@@ -1075,7 +1075,7 @@ figure.effect-zoe figcaption {
 	bottom: 0;
 	padding: 1em;
 	height: 4.45em;
-	background: #00ff0d;
+	background: #e7880c;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0, 100%, 0);
@@ -1106,7 +1106,7 @@ figure.effect-zoe p.description {
 	opacity: 0;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
-	-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+	/* -webkit-backface-visibility: hidden; Fix for Chrome 37.0.2062.120 (Mac) */
 	background: #e7880c;
 	left: 0;
 }
@@ -1119,7 +1119,7 @@ figure.effect-zoe .name-block, figure.effect-zoe p.icon-links a {
 figure.effect-zoe p.icon-links a span::before {
 	display: inline-block;
 	padding: 8px 10px;
-	speak: none;
+	/* speak: none; */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -1161,8 +1161,8 @@ figure.effect-zoe:hover p.icon-links a:first-child {
 .owl-carousel.white .owl-controls .owl-page.active span {
 	background: #e7880c;
 }
-.nf-carousel-theme {
-}
+/* .nf-carousel-theme {
+} */
 .nf-carousel-theme .owl-controls .owl-pagination {
 	position: absolute;
 	z-index: 2;
@@ -1455,7 +1455,7 @@ form label.error {
 	color: #8d8d8d;
 	cursor: pointer;
 	display: inline-block;
-	float: right;
+	/* float: right; */
 	font-family: "FontAwesome", sans-serif;
 	margin: 0;
 	outline: 0 none;
@@ -2892,7 +2892,7 @@ form label.error {
 }
 .panel-title a[aria-expanded="true"] .fa-plus:before {
 	content: "\f068";
-	font-famiyl: 'FontAwesome';
+	/* font-famiyl: 'FontAwesome'; */
 }
 /*  404 page         ||---------------------------- */
 
@@ -3106,8 +3106,8 @@ form label.error {
 	display: inline-block;
 	margin: 0 5px;
 }
-.post-comment {
-}
+/* .post-comment {
+} */
 .post-comment .comment-numb {
 	font-weight: 300;
 }
@@ -3556,7 +3556,7 @@ form .error {
 	border: 1px solid #e5e5e5;
 	color: #878787;
 	background: transparent;
-	-webkit-appearance: none;
+	/* -webkit-appearance: none; */
 	border-radius: 0;
 }
 .contact-form input[type="text"]:focus, .contact-form textarea:focus {
@@ -6264,13 +6264,13 @@ filter: alpha(opacity=0);
 .mv-block__vision-bg {
 	background: #000;
 }
-.mv-block__vision_link, .mv-block__mission_link {
+/* .mv-block__vision_link, .mv-block__mission_link {
 	color: #fff;
 	font-weight: bold;
 	display: inline-block;
 	margin: 20px 0 -webkit-transition : color 0.22s ease-in-out;
 	transition: color 0.22s ease-in-out;
-}
+} */
 .mv-block__mission_link {
 	color: #222;
 }
@@ -7872,10 +7872,10 @@ div .secondary_bg {
 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
 	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
 	box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
-	-webkit-transform: rotate(45deg);
+	/* -webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
+	-o-transform: rotate(45deg); */
 }
 .ribbon:before, .ribbon:after {
 	content: "";
@@ -8284,8 +8284,8 @@ ul.tags li {
 }
 
 /* Tabs */
-.tab-content {
-}
+/* .tab-content {
+} */
 .left-tabs > .nav-tabs {
 	border-width: 0;
 	float: left;
@@ -10241,7 +10241,7 @@ a.btn.xplus-btn.pricing.active:hover {
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch
 }
-/*! * Default mobile-first, responsive styling for pickadate.js * Demo: http://amsul.github.io/pickadate.js */
+
 .picker__holder, .picker__frame {
 	bottom: 0;
 	left: 0;
@@ -10251,7 +10251,7 @@ a.btn.xplus-btn.pricing.active:hover {
 .picker__holder {
 	position: fixed;
 	transition: background 0.15s ease-out, top 0s 0.15s;
-	-webkit-backface-visibility: hidden
+	/* -webkit-backface-visibility: hidden */
 }
 .picker__frame {
 	position: absolute;
@@ -10306,7 +10306,7 @@ a.btn.xplus-btn.pricing.active:hover {
 .picker--opened .picker__holder {
 	top: 0;
 	background: transparent;
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)";
+	/* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)"; */
 	zoom: 1;
 	background: rgba(0,0,0,0.32);
 	transition: background 0.15s ease-out
@@ -11172,7 +11172,7 @@ body .width-100per {
 	border: 1px solid #e5e5e5;
 	color: #878787;
 	background: #fff;
-	-webkit-appearance: none;
+	/* -webkit-appearance: none; */
 	border-radius: 0;
 }
 .quote-form textarea {

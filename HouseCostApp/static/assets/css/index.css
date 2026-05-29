@@ -37,6 +37,7 @@
 	line-height: 1.8;
 }
 .main-banner .tp-parallax-wrap {
+	color:white;
 }
 .main-banner .tp-mask-wrap {
 	height: auto;
@@ -657,7 +658,7 @@ figure {
 	display: inline-block;
 	margin-bottom: 15px;
 	font-weight: 700;
-	color: #00ff0d;
+	color: #e7880c;
 }
 .blog .post-content a.blog_tital:hover, .blog .post-content a.read_more:hover {
 	color: #714da0;

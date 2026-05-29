@@ -27,7 +27,7 @@ website:   	http://www.themepunch.com
   font-family: "revicons";
   font-style: normal;
   font-weight: normal;
-  speak: none;
+  /* speak: none; */
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
@@ -223,10 +223,10 @@ website:   	http://www.themepunch.com
 
 
 .tp-caption {	
-	-moz-user-select: none;
+	/* -moz-user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
-	-o-user-select: none;	
+	-o-user-select: none;	 */
 	position:absolute;
 	-webkit-font-smoothing: antialiased !important;
 }
@@ -600,9 +600,9 @@ img.tp-slider-alternative-image	{
 .rev-btn.rev-uppercase,
 .rev-btn.rev-uppercase:visited			{ 	text-transform: uppercase; letter-spacing: 1px; font-size: 15px; font-weight: 900; }
 
-.rev-btn.rev-withicon i					{ 	font-size: 15px; font-weight: normal; position: relative; top: 0px; -webkit-transition: all 0.2s ease-out !important; -moz-transition: all 0.2s ease-out !important; -o-transition: all 0.2s ease-out !important; -ms-transition: all 0.2s ease-out !important; margin-left:10px !important;}
+/* .rev-btn.rev-withicon i					{ 	font-size: 15px; font-weight: normal; position: relative; top: 0px; -webkit-transition: all 0.2s ease-out !important; -moz-transition: all 0.2s ease-out !important; -o-transition: all 0.2s ease-out !important; -ms-transition: all 0.2s ease-out !important; margin-left:10px !important;}
 
-.rev-btn.rev-hiddenicon i				{ 	font-size: 15px; font-weight: normal; position: relative; top: 0px; -webkit-transition: all 0.2s ease-out !important; -moz-transition: all 0.2s ease-out !important; -o-transition: all 0.2s ease-out !important; -ms-transition: all 0.2s ease-out !important; opacity: 0; margin-left:0px !important; width:0px !important;  }
+.rev-btn.rev-hiddenicon i				{ 	font-size: 15px; font-weight: normal; position: relative; top: 0px; -webkit-transition: all 0.2s ease-out !important; -moz-transition: all 0.2s ease-out !important; -o-transition: all 0.2s ease-out !important; -ms-transition: all 0.2s ease-out !important; opacity: 0; margin-left:0px !important; width:0px !important;  } */
 .rev-btn.rev-hiddenicon:hover i			{   opacity: 1 !important; margin-left:10px !important; width:auto !important;}
 
 /* REV BUTTONS MEDIUM */
@@ -637,7 +637,7 @@ img.tp-slider-alternative-image	{
   padding: 22px 0 0 14px;
   border-radius: 50%;
   border: 1px solid rgba(51,51,51,0.25);
-  tap-highlight-color: transparent;
+  /* tap-highlight-color: transparent; */
   cursor: pointer;
 }
 .rev-burger span {
@@ -875,12 +875,12 @@ img.tp-slider-alternative-image	{
 -	BASIC SETTINGS FOR THE BANNER	-
 ***********************************************/
 
- .tp-simpleresponsive img {
+ /* .tp-simpleresponsive img {
 	-moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
-}
+} */
 
 .tp-caption img {
 	background: transparent;
@@ -1215,5 +1215,5 @@ img.tp-slider-alternative-image	{
   white-space: normal;}
 .hginfo 					   { 	position:absolute;top:-2px;left:-2px;color:#e74c3c;font-size:12px;font-weight:600; background:#000;padding:2px 5px;}
 .indebugmode .tp-caption:hover { 	border:1px dashed #c0392b !important;}
-.helpgrid 					   { 	border:2px dashed #c0392b;position:absolute;top:0px;peft:0px;z-index:0 }
+.helpgrid 					   { 	border:2px dashed #c0392b;position:absolute;top:0px;left:0px;z-index:0 }
 
