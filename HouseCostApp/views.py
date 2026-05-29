@@ -63,14 +63,15 @@ def delete_user(request, user_id):
 
 # Old Gemini API KEY attach method
 # API_KEY = "AIzaSyB-TW9G7FfZf8kWMjUDDUFu8wQMSGEMlKg"
-# genai.configure(api_key=API_KEY)
-# model = genai.GenerativeModel('gemini-3-flash-preview')
+API_KEY = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=API_KEY)
+model = genai.GenerativeModel('gemini-3-flash-preview')
 
 # New Gemini API KEY attach method
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
-model = client.models
+# client = genai.Client(
+#     api_key=os.getenv("GEMINI_API_KEY")
+# )
+# model = client.models
 
 
 @login_required
