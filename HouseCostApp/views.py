@@ -152,7 +152,7 @@ def scan_house_map(request):
             """
 
             # Send image + prompt to Gemini
-            response = model.generate_content(model = "gemini-3-flash-preview", contents= [prompt, img])
+            response = model.generate_content([prompt, img])
 
             raw_result = response.text
 
