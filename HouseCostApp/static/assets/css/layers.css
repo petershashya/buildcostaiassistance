@@ -321,7 +321,7 @@ website:   	http://www.themepunch.com
 {
 	-moz-border-radius:0;
 	-webkit-border-radius:0;
-	background-color:#00ff0d;
+	background-color:#e7880c;
 	border-radius:0;
 	color:#fff;
 	font-family:"Open Sans";
@@ -374,7 +374,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_thin_grey,.medium_thin_grey
 {
 	background-color:transparent;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#666;
@@ -421,7 +421,7 @@ website:   	http://www.themepunch.com
 .tp-caption.large_bold_darkblue,.large_bold_darkblue
 {
 	background-color:transparent;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#34495e;
@@ -435,7 +435,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_bg_darkblue,.medium_bg_darkblue
 {
 	background-color:#34495e;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -495,10 +495,10 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_bold_orange,.medium_bold_orange
 {
 	background-color:transparent;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
-	color:#00ff0d;
+	color:#e7880c;
 	font-family:"Open Sans";
 	font-size:24px;
 	font-weight:800;
@@ -508,8 +508,8 @@ website:   	http://www.themepunch.com
 
 .tp-caption.medium_bg_orange,.medium_bg_orange
 {
-	background-color:#00ff0d;
-	border-color:#00ff0d;
+	background-color:#e7880c;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -535,7 +535,7 @@ website:   	http://www.themepunch.com
 .tp-caption.large_bold_white,.large_bold_white
 {
 	background-color:transparent;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -549,7 +549,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_light_white,.medium_light_white
 {
 	background-color:transparent;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -579,7 +579,7 @@ website:   	http://www.themepunch.com
 .tp-caption.mediumlarge_light_white_center,.mediumlarge_light_white_center
 {
 	background-color:transparent;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -595,7 +595,7 @@ website:   	http://www.themepunch.com
 .tp-caption.medium_bg_asbestos,.medium_bg_asbestos
 {
 	background-color:#7f8c8d;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -625,7 +625,7 @@ website:   	http://www.themepunch.com
 .tp-caption.large_bold_black,.large_bold_black
 {
 	background-color:transparent;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#000;
@@ -639,7 +639,7 @@ website:   	http://www.themepunch.com
 .tp-caption.mediumlarge_light_darkblue,.mediumlarge_light_darkblue
 {
 	background-color:transparent;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#34495e;
@@ -654,7 +654,7 @@ website:   	http://www.themepunch.com
 .tp-caption.small_light_white,.small_light_white
 {
 	background-color:transparent;
-	border-color:#00ff0d;
+	border-color:#e7880c;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -2045,7 +2045,7 @@ website:   	http://www.themepunch.com
 
 .tp-caption.Gym-Button:hover,.Gym-Button:hover
 {
-	background-color:rgba(114,168,0,1.00);
+	background-color:#a1610c;
 	border-color:rgba(0,0,0,0);
 	border-radius:30px 30px 30px 30px;
 	border-style:solid;
@@ -2075,7 +2075,7 @@ website:   	http://www.themepunch.com
 .tp-caption.Gym-Button-Light:hover,.Gym-Button-Light:hover
 {
 	background-color:rgba(114,168,0,0);
-	border-color:rgba(139,192,39,1.00);
+	border-color:rgb(96, 139, 14)
 	border-radius:30px 30px 30px 30px;
 	border-style:solid;
 	border-width:2px;
@@ -2204,7 +2204,7 @@ website:   	http://www.themepunch.com
 
 .tp-caption.Feature-Tour,.Feature-Tour
 {
-	background-color:rgba(139,192,39,1.00);
+	background-color:#e7880c;
 	border-color:rgba(0,0,0,0);
 	border-radius:30px 30px 30px 30px;
 	border-style:solid;
@@ -2252,11 +2252,11 @@ website:   	http://www.themepunch.com
 .tp-caption.Feature-Examples:hover,.Feature-Examples:hover
 {
 	background-color:transparent;
-	border-color:rgba(139,192,39,1.00);
+	border-color:#e7880c;
 	border-radius:30px 30px 30px 30px;
 	border-style:solid;
 	border-width:2px;
-	color:rgba(139,192,39,1.00);
+	color:#e7880c;
 	text-decoration:none;
 }
 
@@ -3695,7 +3695,7 @@ website:   	http://www.themepunch.com
     .Woo-ProductInfo:hover {
         color: rgba(0, 0, 0, 1.00);
         text-decoration: none;
-        background-color: #00ff0d;
+        background-color: #e7880c;
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
