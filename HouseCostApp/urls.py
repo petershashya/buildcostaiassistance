@@ -10,16 +10,19 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('accounts/login/', views.login_view, name='account_login'),
     path('register/', views.register_view, name='register'),
+    
     path('predict/', login_required(views.predict), name='predict'),
+    path('prediction/',views.prediction, name='prediction'),
+    
     path('history/',login_required(views.history_view), name='history'),
     path('logout/',views.logout_view, name='logout'),
-    path('prediction/',views.prediction, name='prediction'),
     path('loader/', views.loader_view, name='loader'),
     
     #for new housemodal
     path('housescan/', views.scan_house_map, name='scan_house_map'),
+    path('house_preference/', views.house_preference, name='house_preference'),
     path('predict-house-cost/',views.predict_house_cost,name='predict_house_cost'),
-    path( "get-house-data/",  views.get_house_data, name="get_house_data" ),
+    path("get-house-data/",  views.get_house_data, name="get_house_data" ),
     
     #Admin Pages Starts Here
     path('admin-page/',login_required(views.admin_page), name='admin-page'),

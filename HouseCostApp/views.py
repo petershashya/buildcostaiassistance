@@ -196,6 +196,11 @@ def scan_house_map(request):
         'image_url': image_url,
         'image_id':image_id
     })
+    
+    
+@login_required
+def house_preference(request):
+    return render(request, 'house_preference.html')
 
 
 @login_required

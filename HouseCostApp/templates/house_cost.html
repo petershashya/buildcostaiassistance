@@ -131,7 +131,7 @@
 						<div class="col-md-9 col-lg-9">
 							<div class="tab-content">
                                                 
-                                                {% if ai_result.construction_analysis %}
+                                                {% comment %} {% if ai_result.construction_analysis %}
                                                 <div class="card-body p-2">
                                                 <div style="max-height:450px; overflow-y:auto;">
                                                 <table  width="100%"  class="bg-secondary">
@@ -144,7 +144,7 @@
                                             </div>
 												<a href="#" class="abt-box__content-link"> Read More <i class="fa fa-chevron-circle-right abt-box__content-link-arrow" aria-hidden="true"></i></a>
 											</div>
-										</div>
+										</div> {% endcomment %}
 
 
                                     
@@ -273,194 +273,8 @@
 
 
 
-                                    {% else %}
-                                    	<!-- Housecostprediction form-->
-                            <div class="card bg-dark text-white">
-								<div class="card-header bg-secondary text-center">
-									<h4 class="text-white">Fill Your Preference</h4>
-								</div>
-								<div class="card-body">
-									<form method="post"
-										enctype="multipart/form-data"
-										action="{% url 'predict_house_cost' %}"
-										id="predictForm">
-									{% csrf_token %}
-									<div class="row">
-										<!-- QUALITY -->
-										<div class="form-group col-md-6">
-											<label for="qualityOfConstruction">
-												Quality of Construction
-											</label>
-											<div class="input-group">
-												<select name="qualityOfConstruction"
-														class="form-control wide"
-														id="qualityOfConstruction"
-														required>
-													<option value="">--Select Below--</option>
-													<option value="Basic">Basic</option>
-													<option value="Standard">Standard</option>
-													<option value="Luxury">Luxury</option>
-												</select>
-												<span class="input-group-addon">
-													<i class="fas fa-building"></i>
-												</span>
-											</div>
-										</div>
-
-										<!-- STRUCTURE -->
-										<div class="form-group col-md-6">
-											<label for="typeOfStructure">
-												Type of Structure
-											</label>
-											<div class="input-group">
-												<select name="typeOfStructure"
-														class="form-control wide"
-														id="typeOfStructure"
-														required>
-													<option value="">--Select Below--</option>
-													<option value="Apartment Building">
-														Apartment Building
-													</option>
-													<option value="Single-family House">
-														Single-family House
-													</option>
-												</select>
-												<span class="input-group-addon">
-													<i class="fas fa-home"></i>
-												</span>
-											</div>
-										</div>
-									</div>
-
-									<!-- SECOND ROW -->
-									<div class="row">
-										<!-- CONSTRUCTION MATERIAL -->
-										<div class="form-group col-md-4">
-											<label for="constructionMaterials">
-												Construction Materials
-											</label>
-											<select name="constructionMaterials"
-													class="form-control wide"
-													id="constructionMaterials"
-													required>
-												<option value="">--Select Below--</option>
-												<option value="Brick">Brick</option>
-												<option value="Wood">Wood</option>
-												<option value="Mixer">Mixer</option>
-												<option value="Concrete">Concrete</option>
-											</select>
-										</div>
-
-										<!-- DOOR MATERIAL -->
-										<div class="form-group col-md-4">
-											<label for="doorMaterials">
-												Door Materials
-											</label>
-											<select name="doorMaterials"
-													class="form-control wide"
-													id="doorMaterials"
-													required>
-												<option value="">--Select Below--</option>
-												<option value="Wood">Wood</option>
-												<option value="Steel">Steel</option>
-												<option value="Aluminium">Aluminium</option>
-												<option value="Glass">Glass</option>
-											</select>
-										</div>
-
-										<!-- WINDOW MATERIAL -->
-										<div class="form-group col-md-4">
-											<label for="windowMaterials">
-												Window Materials
-											</label>
-											<select name="windowMaterials"
-													class="form-control wide"
-													id="windowMaterials"
-													required>
-												<option value="">--Select Below--</option>
-												<option value="Glass">Glass</option>
-												<option value="Aluminium">Aluminium</option>
-												<option value="Wood">Wood</option>
-												<option value="PVC">PVC</option>
-											</select>
-										</div>
-                                    </div>
-
-                                        
-									<!-- THIRD ROW -->
-									<div class="row">
-										<!-- LOCATION -->
-										<div class="form-group col-md-4">
-											<label for="locationOfHouse">
-												Location
-											</label>
-											<div class="input-group">
-												<select name="locationOfHouse"
-														class="form-control"
-														id="locationOfHouse"
-														required>
-													<option value="">--Select Below--</option>
-													<option value="Mbeya">Mbeya</option>
-													<option value="Dar">Dar-es-salaam</option>
-													<option value="Dodoma">Dodoma</option>
-													<option value="Mwanza">Mwanza</option>
-													<option value="Tabora">Tabora</option>
-													<option value="Lindi">Lindi</option>
-													<option value="Songwe">Songwe</option>
-													<option value="Arusha">Arusha</option>
-													<option value="Morogoro">Morogoro</option>
-												</select>
-												<span class="input-group-addon">
-													<i class="fas fa-map-marker-alt"></i>
-												</span>
-											</div>
-										</div>
-
-										<!-- LOCATION NATURE -->
-										<div class="form-group col-md-4">
-											<label for="locationnature">
-												Location Nature
-											</label>
-											<select name="locationnature"
-													class="form-control"
-													id="locationnature"
-													required>
-												<option value="">--Select Below--</option>
-												<option value="Urban">
-													Urban Areas
-												</option>
-												<option value="Rural">
-													Rural Areas
-												</option>
-											</select>
-										</div>
-
-										<!-- CONSTRUCTION PERIOD -->
-										<div class="form-group col-md-4">
-											<label for="constructionPeriod">
-												Construction Period (Days)
-											</label>
-											<div class="input-group">
-												<input type="number"
-													class="form-control text-light"
-													name="constructionPeriod"
-													id="constructionPeriod"
-													required>
-												<span class="input-group-addon date_icon">
-													<i class="fas fa-calendar-alt"></i>
-												</span>
-											</div>
-										</div>
-									</div>
-                                    <div class="row mx-2">
-                                       <button type="submit" class="col-sm- btn btn-sm px-3 py-2 bg-warning">Submit</button>
-									</div>
-								</form>
-                            </div>
-						</div>
-					</div>
-                </div>
-                    {% endif %}
+                                  
+                    {% comment %} {% endif %} {% endcomment %}
 
                 </div>
 

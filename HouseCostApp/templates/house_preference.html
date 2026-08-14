@@ -1,0 +1,334 @@
+		
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+	.card {
+		border: none;
+		border-radius: 10px;
+		padding: 20px;
+		margin: auto;
+	}
+	
+	.card-header {
+		border-radius: 10px 10px 0 0;
+		padding: 10px;
+		background-color: #6c757d;
+	}
+	
+	.card-header h2 {
+		margin: 0;
+		font-size: 24px;
+		color: #fff;
+	}
+	
+	.card-body {
+		background-color: #343a40;
+		border-radius: 0 0 10px 10px;
+		padding: 20px;
+	}
+	
+	.form-control {
+		border-radius: 5px;
+		margin-bottom: 15px;
+		background-color: #555;
+		color: #fff;
+		border: 1px solid #444;
+	}
+	
+	.form-control::placeholder {
+		color: #bbb;
+	}
+	
+	.form-control:focus {
+		background-color: #666;
+		color: #fff;
+		border-color: #007bff;
+	}
+	
+	/*.button {
+		background-color: #d18719;
+		border-color: #007bff;
+		padding: 10px 20px;
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 5px;
+		text-decoration: none;
+		display: inline-block;
+	} */
+	
+	.btn-primary:hover {
+		background-color: #0056b3;
+		border-color: #0056b3;
+	}
+	label{
+		color: #fff;
+	}
+	
+</style>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<!-- Intro Section -->
+ <section class="inner-intro bg-img light-color overlay-before parallax-background">
+    <div class="container">
+      <div class="row title">
+		<div class="title_row">
+			<h1 data-title="About">
+				<span>
+					Welcome 
+					
+				</span>
+			</h1>
+			<div class="page-breadcrumb"  style="font-size:25px;">
+				<span>{% if user.is_authenticated %}
+					{{ user.name }}
+				{% else %}
+					Guest
+				{% endif %}</span>
+			</div>
+		</div>
+    </div>
+  </section>
+ <!-- Intro Section End-->
+			
+			
+			<!-- CONTENT -->
+
+			<section class="padding ptb-xs-40">
+				<div class="container">
+					<div class="message-section {% if messages %}{% if messages.tags == 'success' %}success{% endif %}{% endif %}" style="{% if messages %}display: block;{% else %}display: none;{% endif %}">
+						{% if messages %}
+							<ul class="messages">
+								{% for message in messages %}
+									<li class="message {% if message.tags %} {{ message.tags }} {% endif %}">{{ message }}</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</div>
+					<div class="row">
+						<div class="col-md-3 col-lg-3 mt-xs-40 pb-xs-40">
+							<div class="tab-title">
+								<ul class="clearfix">
+									<li>
+										<a href="{% url 'scan_house_map' %}"><i class="fas fa-building"></i> Home</a>
+									</li>
+									<li>
+										<a href="{% url 'history' %}" class="active"><i class="fas fa-history"></i> History</a>
+									</li>
+									<li>
+										<a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+									</li>
+								</ul>
+							</div>
+							<div class="company-brochure mt-30">
+								<h4>Downlaod Brochure</h4>
+								<a href="#"><img src="{% static 'assets/images/flyer.jpg' %}" alt=""></a>
+							</div>
+						</div>
+
+						<div class="col-md-9 col-lg-9">
+							<div class="tab-content">
+
+
+
+                                  
+                                    	<!-- Housecostprediction form-->
+                            <div class="card bg-dark text-white">
+								<div class="card-header bg-secondary text-center">
+									<h4 class="text-white">Fill Your Preference</h4>
+								</div>
+								<div class="card-body">
+									<form method="post"
+										enctype="multipart/form-data"
+										action="{% url 'predict_house_cost' %}"
+										id="predictForm">
+									{% csrf_token %}
+									<div class="row">
+										<!-- QUALITY -->
+										<div class="form-group col-md-6">
+											<label for="qualityOfConstruction">
+												Quality of Construction
+											</label>
+											<div class="input-group">
+												<select name="qualityOfConstruction"
+														class="form-control wide"
+														id="qualityOfConstruction"
+														required>
+													<option value="">--Select Below--</option>
+													<option value="Basic">Basic</option>
+													<option value="Standard">Standard</option>
+													<option value="Luxury">Luxury</option>
+												</select>
+												<span class="input-group-addon">
+													<i class="fas fa-building"></i>
+												</span>
+											</div>
+										</div>
+
+										<!-- STRUCTURE -->
+										<div class="form-group col-md-6">
+											<label for="typeOfStructure">
+												Type of Structure
+											</label>
+											<div class="input-group">
+												<select name="typeOfStructure"
+														class="form-control wide"
+														id="typeOfStructure"
+														required>
+													<option value="">--Select Below--</option>
+													<option value="Apartment Building">
+														Apartment Building
+													</option>
+													<option value="Single-family House">
+														Single-family House
+													</option>
+												</select>
+												<span class="input-group-addon">
+													<i class="fas fa-home"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<!-- SECOND ROW -->
+									<div class="row">
+										<!-- CONSTRUCTION MATERIAL -->
+										<div class="form-group col-md-4">
+											<label for="constructionMaterials">
+												Construction Materials
+											</label>
+											<select name="constructionMaterials"
+													class="form-control wide"
+													id="constructionMaterials"
+													required>
+												<option value="">--Select Below--</option>
+												<option value="Brick">Brick</option>
+												<option value="Wood">Wood</option>
+												<option value="Mixer">Mixer</option>
+												<option value="Concrete">Concrete</option>
+											</select>
+										</div>
+
+										<!-- DOOR MATERIAL -->
+										<div class="form-group col-md-4">
+											<label for="doorMaterials">
+												Door Materials
+											</label>
+											<select name="doorMaterials"
+													class="form-control wide"
+													id="doorMaterials"
+													required>
+												<option value="">--Select Below--</option>
+												<option value="Wood">Wood</option>
+												<option value="Steel">Steel</option>
+												<option value="Aluminium">Aluminium</option>
+												<option value="Glass">Glass</option>
+											</select>
+										</div>
+
+										<!-- WINDOW MATERIAL -->
+										<div class="form-group col-md-4">
+											<label for="windowMaterials">
+												Window Materials
+											</label>
+											<select name="windowMaterials"
+													class="form-control wide"
+													id="windowMaterials"
+													required>
+												<option value="">--Select Below--</option>
+												<option value="Glass">Glass</option>
+												<option value="Aluminium">Aluminium</option>
+												<option value="Wood">Wood</option>
+												<option value="PVC">PVC</option>
+											</select>
+										</div>
+                                    </div>
+
+                                        
+									<!-- THIRD ROW -->
+									<div class="row">
+										<!-- LOCATION -->
+										<div class="form-group col-md-4">
+											<label for="locationOfHouse">
+												Location
+											</label>
+											<div class="input-group">
+												<select name="locationOfHouse"
+														class="form-control"
+														id="locationOfHouse"
+														required>
+													<option value="">--Select Below--</option>
+													<option value="Mbeya">Mbeya</option>
+													<option value="Dar">Dar-es-salaam</option>
+													<option value="Dodoma">Dodoma</option>
+													<option value="Mwanza">Mwanza</option>
+													<option value="Tabora">Tabora</option>
+													<option value="Lindi">Lindi</option>
+													<option value="Songwe">Songwe</option>
+													<option value="Arusha">Arusha</option>
+													<option value="Morogoro">Morogoro</option>
+												</select>
+												<span class="input-group-addon">
+													<i class="fas fa-map-marker-alt"></i>
+												</span>
+											</div>
+										</div>
+
+										<!-- LOCATION NATURE -->
+										<div class="form-group col-md-4">
+											<label for="locationnature">
+												Location Nature
+											</label>
+											<select name="locationnature"
+													class="form-control"
+													id="locationnature"
+													required>
+												<option value="">--Select Below--</option>
+												<option value="Urban">
+													Urban Areas
+												</option>
+												<option value="Rural">
+													Rural Areas
+												</option>
+											</select>
+										</div>
+
+										<!-- CONSTRUCTION PERIOD -->
+										<div class="form-group col-md-4">
+											<label for="constructionPeriod">
+												Construction Period (Days)
+											</label>
+											<div class="input-group">
+												<input type="number"
+													class="form-control text-light"
+													name="constructionPeriod"
+													id="constructionPeriod"
+													required>
+												<span class="input-group-addon date_icon">
+													<i class="fas fa-calendar-alt"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+                                    <div class="row mx-2">
+                                       <button type="submit" class="col-sm- btn btn-sm px-3 py-2 bg-warning">Submit</button>
+									</div>
+								</form>
+                            </div>
+						</div>
+					</div>
+                </div>
+              
+
+                </div>
+
+                
+							<!-- Our mission -->
+					<!-- Our mission -->
+				</div>
+			</section>
+
+
+{% endblock %}       
